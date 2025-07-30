@@ -1,0 +1,19 @@
+name: CI - Runner local sans dépendance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+
+      - name: Lister les fichiers
+        run: ls -l
+
+      - name: Exécuter le script bash
+        run: ./check.sh
